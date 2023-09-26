@@ -1,0 +1,37 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}
+
+{% block titulo %}
+
+Pagina de inicio
+
+{% endblock %}
+
+{% block texto %}
+
+Bienvenidos a la pagina de inicio
+
+{% endblock %}
+
+{% block busqueda %}
+
+<form action="/AppCoder/resultados/" method="GET">
+
+
+    <input type="text" name="nombre" id="usuario">
+    <input type="submit" value="Buscar">
+
+
+</form>
+
+<p>Estamos buscando al usuario: {{nombre}}</p>
+
+{% for usuario in usuarios %}
+
+    <p> Apellido: {{usuario.apellido}} --------- Edad: {{usuario.edad}} </p>
+
+{% endfor%}
+
+{% endblock %}
